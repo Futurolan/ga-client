@@ -1,3 +1,5 @@
+@import '../../node_modules/bulma/sass/utilities/_all';
+
 .ga-tournament-content{
 
   .ga-tournament-content-image {
@@ -6,6 +8,13 @@
       position: absolute;
       bottom: 0;
       right:0;
+      height: auto;
+      @include tablet-only{
+        height:60px;
+      }
+      @include  mobile{
+        height:30px;
+      }
     }
   }
   .tags{
