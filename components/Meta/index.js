@@ -19,13 +19,14 @@ const Meta = (props) => {
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
-      <meta name='og:title' content={title} />
-      <meta name='og:description' content={description} />
-      <meta name='og:image' content={image} />
-      <meta name='og:url' content={`${process.env.BASE_URL}${props.router.asPath}`} />
-      <meta name='og:site_name' content={title} />
-      <meta name='og:locale' content='fr_FR' />
-      <meta name='og:type' content='website' />
+      <meta name='twitter:image:src' content={image} />
+      <meta property='og:title' content={title} />
+      <meta property='og:description' content={description} />
+      <meta property='og:image' content={image} />
+      <meta property='og:url' content={`${process.env.BASE_URL}${props.router.asPath}`} />
+      <meta property='og:site_name' content={title} />
+      <meta property='og:locale' content='fr_FR' />
+      <meta property='og:type' content='website' />
     </Head>
   )
 }
