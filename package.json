@@ -1,6 +1,6 @@
 {
   "name": "ga-client",
-  "description": "Gamers Assembly Front for Galloween 2018",
+  "description": "Gamers Assembly Front",
   "private": true,
   "author": "Baptiste - Bmagic",
   "license": "GPLv3",
@@ -12,15 +12,15 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "@zeit/next-sass": "^1.0.1",
-    "apollo-boost": "^0.1.16",
-    "apollo-client": "^2.4.2",
-    "autoprefixer": "^9.2.0",
+    "apollo-boost": "^0.1.17",
+    "apollo-client": "^2.4.3",
+    "autoprefixer": "^9.3.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "bulma": "^0.7.2",
     "bulma-ribbon": "0.1.1",
     "classnames": "^2.2.6",
-    "cssnano": "^4.1.4",
+    "cssnano": "^4.1.7",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
@@ -35,11 +35,12 @@
     "react": "^16.5.2",
     "react-apollo": "^2.2.4",
     "react-dom": "^16.5.2",
-    "react-moment": "^0.8.1",
+    "react-moment": "^0.8.2",
     "react-share": "^2.3.1",
-    "react-slick": "^0.23.1",
+    "react-slick": "^0.23.2",
     "react-twitter-widgets": "^1.7.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "sitemap": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "^5.7.0",
