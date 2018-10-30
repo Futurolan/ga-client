@@ -8,12 +8,18 @@ class Platform extends React.Component {
       pc: 'PC',
       ps4: 'PS4',
       wii_u: 'Wii U',
-      xbox_one: 'Xbox One'
+      xbox_one: 'Xbox One',
+      other: 'Autre'
     }
-
-    return (
-      <span className='ga-platform' >{map[platform] ? map[platform] : platform}</span>
-    )
+    if (platform === 'phone') {
+      return (
+        <span className='ga-platform'><i className='fab fa-android' />&nbsp;&nbsp;&nbsp;<i className='fab fa-apple' /></span>
+      )
+    } else {
+      return (
+        <span className='ga-platform' >{map[platform] ? map[platform] : platform}</span>
+      )
+    }
   }
 }
 
