@@ -4,14 +4,9 @@ import '../styles/styles.scss'
 import TicketContent from '../components/TicketContent'
 import Meta from '../components/Meta'
 import config from '../config/config'
-import ErrorPage from 'next/error'
 
 class BilletteriePage extends React.Component {
   render () {
-    if (config.tickets.active !== true) {
-      return <ErrorPage statusCode={404} />
-    }
-
     return (
       <Layout name='billetterie-page has-bg-star'>
         <section className='section'>
