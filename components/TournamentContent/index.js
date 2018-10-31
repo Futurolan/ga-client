@@ -20,7 +20,7 @@ function TournamentContent ({ data: { loading, error, node } }) {
 
   if (node) {
     return <div className='ga-tournament-content'>
-      <Meta title={node.title} image={node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} description={`Toutes les informations relative au tournoi ${node.title}`} />
+      <Meta title={node.title} image={node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} description={`Toutes les informations relatives au tournoi ${node.title}`} />
 
       <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
       <div className='ga-tournament-content-image'>
