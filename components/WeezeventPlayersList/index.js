@@ -16,13 +16,13 @@ function WeezeventPlayerList ({ size, reservedSlot, data: { loading, error, node
     countWeezevent = nodeQuery.entities[0].count
   }
 
-  return <div className='ga-weezevent-players-list' >
+  return <div className='ga-weezevent-players-list'>
 
     <div className='panel'>
       <p className='panel-heading has-background-primary has-text-white'>
         <i className='fas fa-headset' />&nbsp;&nbsp;Inscrits {reservedSlot + countWeezevent}/{size}
       </p>
-      {dataWeezevent.type === 'team' && <table className='table is-fullwidth'>
+      <table className='table is-fullwidth'>
         <tbody>
           {[...Array(reservedSlot)].map((x, index) =>
             <tr key={`reserved${index}`}>
@@ -32,13 +32,23 @@ function WeezeventPlayerList ({ size, reservedSlot, data: { loading, error, node
               <td />
             </tr>
           )}
-          {dataWeezevent.data.map((object, index) => (
+          {dataWeezevent.type === 'team' && dataWeezevent.data.map((object, index) => (
             <tr key={index}>
               <td>
                 {object.name}
               </td>
               <td>
                 {object.players.sort().join(', ')}
+              </td>
+            </tr>
+          ))}
+          {dataWeezevent.type === 'solo' && dataWeezevent.data.map((object, index) => (
+            <tr key={index}>
+              <td>
+                {object.team}
+              </td>
+              <td>
+                {object.pseudo}
               </td>
             </tr>
           ))}
@@ -49,29 +59,7 @@ function WeezeventPlayerList ({ size, reservedSlot, data: { loading, error, node
           {/* </tr> */}
           {/* )} */}
         </tbody>
-      </table>}
-      {dataWeezevent.type === 'solo' && <table className='table is-fullwidth'>
-        <tbody>
-          {[...Array(reservedSlot)].map((x, index) =>
-            <tr key={`reserved${index}`}>
-              <td>
-                <i className='fas fa-lock' />&nbsp;&nbsp;Slot réservé
-              </td>
-              <td />
-            </tr>
-          )}
-          {dataWeezevent.data.map((object, index) => (
-            <tr key={index}>
-              <td>
-                {object.team}
-              </td>
-              <td>
-                {object.pseudo}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>}
+      </table>
     </div>
   </div>
 }

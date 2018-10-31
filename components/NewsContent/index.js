@@ -24,7 +24,7 @@ function NewsContent ({ data: { loading, error, node } }) {
 
       <div className='level'>
         <div className='level-left'>
-          <div className='level-item'> Créé le <Moment unix format='DD/MM/YYYY à HH:SS'>{node.created}</Moment>, par {node.entityOwner.name}</div>
+          <div className='level-item'> Créé le&nbsp;<Moment unix format='DD/MM/YYYY à HH:SS'>{node.created}</Moment>, par {node.entityOwner.name}</div>
         </div>
         <div className='level-right' >
           <SocialNetworkShare title={node.title} />
