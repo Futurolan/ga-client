@@ -38,7 +38,7 @@ app.prepare()
       return res.sendFile(path.join(__dirname, './static', 'humans.txt'))
     })
 
-    server.get('googleaca7c0133ccf608f.html', (req, res) => {
+    server.get('/googleaca7c0133ccf608f.html', (req, res) => {
       return res.sendFile(path.join(__dirname, './static', 'googleaca7c0133ccf608f.txt'))
     })
 
