@@ -10,9 +10,9 @@ import * as gtag from '../../lib/gtag'
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
 const Layout = ({ name, children }) => (
-  <div className={`wrapper ${name}`}>
+  <div className={`site ${name}`}>
     <Header />
-    <main className='main'>
+    <main className='site-content'>
       { children }
     </main>
     <Footer />

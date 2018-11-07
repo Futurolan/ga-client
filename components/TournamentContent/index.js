@@ -25,7 +25,7 @@ function TournamentContent ({ data: { loading, error, node } }) {
       <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
       <div className='ga-tournament-content-image'>
         <figure className='image is-5by1'>
-          <img srcSet={`${node.image ? node.image.mobile.url : node.game.node.image.mobile.url} 705w, ${node.image ? node.image.desktop.url : node.game.node.image.desktop.url} 960w, ${node.image ? node.image.widescreen.url : node.game.node.image.widescreen.url} 1155w, ${node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} 1345w`} />
+          <img src={node.image ? node.image.mobile.url : node.game.node.image.mobile.url} srcSet={`${node.image ? node.image.mobile.url : node.game.node.image.mobile.url} 705w, ${node.image ? node.image.desktop.url : node.game.node.image.desktop.url} 960w, ${node.image ? node.image.widescreen.url : node.game.node.image.widescreen.url} 1155w, ${node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} 1345w`} />
         </figure>
         <div className='pegi'>
           <PegiLogo pegi={node.game.node.pegi} />

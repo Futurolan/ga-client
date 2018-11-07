@@ -10,28 +10,4 @@ $family-sans-serif: "Lato", sans-serif;
 @import "../node_modules/bulma-ribbon/dist/css/bulma-ribbon";
 
 @import "utils";
-
-.wrapper {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.main {
-  flex: 1;
-}
-
-.image.is-5by1{
-  padding-top: 20%;
-}
-
-.image.is-5by1 img{
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-
+@import "sticky-footer";
