@@ -30,7 +30,7 @@ function NewsContent ({ data: { loading, error, node } }) {
           <SocialNetworkShare title={node.title} />
         </div>
       </div>
-      <div className='content has-text-justified' >
+      <div className='content' >
         <div dangerouslySetInnerHTML={{ __html: node.content.processed }} />
       </div>
 

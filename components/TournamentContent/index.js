@@ -40,7 +40,7 @@ function TournamentContent ({ data: { loading, error, node } }) {
 
       <div className='columns'>
         <div className='column is-8'>
-          <div className='content has-text-justified' >
+          <div className='content' >
             <div dangerouslySetInnerHTML={{ __html: node.description.value }} />
           </div>
 
@@ -51,7 +51,7 @@ function TournamentContent ({ data: { loading, error, node } }) {
               <i className='fas fa-calendar-alt' />&nbsp;&nbsp;Planning
             </p>
             <div className='panel-block has-background-white'>
-              <div dangerouslySetInnerHTML={{ __html: node.planning.value }} />
+              <div className='content' dangerouslySetInnerHTML={{ __html: node.planning.value }} />
             </div>
           </div>
           <WeezeventPlayerList tournamentNid={node.nid.toString()} reservedSlot={node.reservedSlot} size={node.size} />
