@@ -3,7 +3,7 @@ import React from 'react'
 import ActiveLink from '../ActiveLink'
 
 import './styles.scss'
-import config from '../../config/config'
+import config from 'config/config'
 import SocialNetworksLinks from '../SocialNetworksLinks'
 
 class Footer extends React.Component {

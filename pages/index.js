@@ -4,11 +4,10 @@ import Layout from 'components/Layout'
 import HomeNewsList from 'components/HomeNewsList'
 import HomeInfoBlocks from 'components/HomeInfo/index'
 import Meta from 'components/Meta'
-import config from '../config/config'
-import Banner from '../components/Banner'
-import Hero from '../components/Hero'
+import Banner from 'components/Banner'
+import Hero from 'components/Hero'
 
-import '../styles/styles.scss'
+import config from 'config/config'
 
 class HomePage extends React.Component {
   render () {

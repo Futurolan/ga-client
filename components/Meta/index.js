@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { withRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import config from '../../config/config'
+import config from 'config/config'
 
 const Meta = (props) => {
   const title = props.title ? `${props.title} | ${config.title}` : config.title

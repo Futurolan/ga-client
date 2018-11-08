@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import config from '../../config/config'
+import config from 'config/config'
 
 import './styles.scss'
 const Banner = (props) => (

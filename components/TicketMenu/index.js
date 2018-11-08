@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
 import ActiveLink from '../ActiveLink'
-import config from '../../config/config'
+import config from 'config/config'
 
 function TicketMenu ({ data: { loading, error, node } }) {
   if (error) {

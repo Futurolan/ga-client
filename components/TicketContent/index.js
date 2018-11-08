@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
 import WeezeventIframe from '../WeezeventIframe'
-import config from '../../config/config'
+import config from 'config/config'
 
 import './styles.scss'
 

@@ -7,7 +7,7 @@ import ActiveLink from '../ActiveLink'
 import './styles.scss'
 import TicketMenu from '../TicketMenu'
 
-import config from '../../config/config'
+import config from 'config/config'
 import SocialNetworksLinks from '../SocialNetworksLinks'
 
 class Header extends React.Component {

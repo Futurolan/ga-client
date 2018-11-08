@@ -1,9 +1,10 @@
 import React from 'react'
+import ErrorPage from 'next/error'
+
 import Layout from 'components/Layout'
 import Meta from 'components/Meta'
-import '../styles/styles.scss'
-import config from '../config/config'
-import ErrorPage from 'next/error'
+
+import config from 'config/config'
 
 class RecrutementPage extends React.Component {
   render () {
@@ -13,7 +14,7 @@ class RecrutementPage extends React.Component {
 
     return (
       <Layout name='recrutement-page has-bg-star'>
-        <div className='section'>
+        <div className='section has-bg-star'>
           <Meta title={config.recruit.title} description={config.recruit.description} />
           <div className='container has-text-centered'>
             <div className='content'>

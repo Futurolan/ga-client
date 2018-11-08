@@ -1,10 +1,12 @@
 import React from 'react'
+import ErrorPage from 'next/error'
+
 import Layout from 'components/Layout'
 import NewsList from 'components/NewsList'
 import Meta from 'components/Meta'
-import '../styles/styles.scss'
-import config from '../config/config'
-import ErrorPage from 'next/error'
+
+import config from 'config/config'
+
 class NewsPage extends React.Component {
   render () {
     if (config.news.active !== true) {
@@ -13,7 +15,7 @@ class NewsPage extends React.Component {
 
     return (
       <Layout name='news-page has-bg-star'>
-        <div className='section'>
+        <div className='section has-bg-star'>
           <Meta title={config.news.title} description={config.news.description} />
           <div className='container'>
             <h1 className='title title-line has-text-centered'><span>Actualités</span></h1>

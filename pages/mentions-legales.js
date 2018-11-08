@@ -1,9 +1,10 @@
 import React from 'react'
+import ErrorPage from 'next/error'
+
 import Layout from 'components/Layout'
 import PageContent from 'components/PageContent'
-import config from '../config/config'
-import '../styles/styles.scss'
-import ErrorPage from 'next/error'
+
+import config from 'config/config'
 
 class ContactsPage extends React.Component {
   render () {
@@ -13,7 +14,7 @@ class ContactsPage extends React.Component {
 
     return (
       <Layout name='mentions-legales-page has-bg-star'>
-        <div className='section'>
+        <div className='section has-bg-star'>
           <div className='container'>
             <PageContent nid={config.legals.pageId.toString()} />
           </div>
