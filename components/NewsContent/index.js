@@ -31,7 +31,7 @@ function NewsContent ({ data: { loading, error, node } }) {
         </div>
       </div>
       <div className='content has-text-justified' >
-        <div dangerouslySetInnerHTML={{ __html: processedContent }} />
+        <div dangerouslySetInnerHTML={{ __html: node.content.processed }} />
       </div>
 
     </div>
