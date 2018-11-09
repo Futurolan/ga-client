@@ -18,7 +18,7 @@ class TournoisPage extends React.Component {
         <div className='section has-bg-star'>
           <Meta title={config.tournaments.title} description={config.tournaments.description} />
           <div className='container'>
-            <h1 className='title title-line has-text-centered'><span>Tournois</span></h1>
+            <h1 className='title title-line has-text-centered'><span>{config.tournaments.title}</span></h1>
             <TournamentList />
           </div>
         </div>

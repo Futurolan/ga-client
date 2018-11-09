@@ -10,7 +10,7 @@ function TicketButton ({ data: { loading, error, node } }) {
     return null
   }
 
-  if (node.url) {
+  if (node && node.url) {
     return <div className='panel ga-ticket-button'>
       <div className='button is-primary is-fullwidth is-large'>
         <Link href='/billetterie'>

@@ -6,6 +6,7 @@ import ActiveLink from '../ActiveLink'
 
 import './styles.scss'
 import TicketMenu from '../TicketMenu'
+import LiveMenu from '../LiveMenu'
 
 import config from 'config/config'
 import SocialNetworksLinks from '../SocialNetworksLinks'
@@ -43,6 +44,7 @@ class Header extends React.Component {
             {config.news.active && <div className='navbar-item'>
               <ActiveLink label={config.news.title} className='has-text-white is-uppercase has-text-weight-bold' path='/news' />
             </div>}
+            <LiveMenu />
             <TicketMenu />
             {config.tournaments.active && <div className='navbar-item is-uppercase has-text-weight-bold'>
               <ActiveLink label={config.tournaments.title} className='has-text-white' path='/tournois' />
