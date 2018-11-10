@@ -1,5 +1,4 @@
 import React from 'react'
-import ErrorPage from 'next/error'
 import Layout from 'components/Layout'
 import Meta from 'components/Meta'
 import TwitchList from 'components/TwitchList'
@@ -11,10 +10,6 @@ import '../styles/styles.scss'
 
 class LivePage extends React.Component {
   render () {
-    if (config.live.active !== true) {
-      return <ErrorPage statusCode={404} />
-    }
-
     return (
       <Layout name='live-page has-bg-star'>
         <div className='section has-bg-star'>
