@@ -39,10 +39,6 @@ let config = {
     description: 'Toutes les informations sur cet évènement'
   },
   live: {
-<<<<<<< HEAD
-=======
-    active: true,
->>>>>>> f0337d94d578edc7a9be442c66532a82177b092d
     title: 'Live',
     description: 'Tous les streams et résultats en direct'
   },
