@@ -44,7 +44,7 @@ export const tournaments = gql`
       {field:"field_tournament_edition",value:["${process.env.EDITION_ID}"]},
       {field:"status",value:["1"]}
     ]},
-  sort:[{field:"field_weight",direction:DESC}],
+  sort:[{field:"field_weight",direction:ASC}],
   limit:9999) {
     count,
     entities {
