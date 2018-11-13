@@ -42,7 +42,6 @@ news:nodeQuery(filter:{
   ]}, limit: 9999) {
   entities {
     id: entityId
-    lastmod: entityChanged
     url: entityUrl {
       path
     }
@@ -91,8 +90,7 @@ app.prepare()
               sitemap.add({
                 url: `${entity.url.path}`,
                 changefreq: 'weekly',
-                priority: 0.7,
-                lastmodISO: entity.lastmod
+                priority: 0.7
               })
             }
           }
@@ -101,7 +99,7 @@ app.prepare()
             if (entity.url && entity.url.path) {
               sitemap.add({
                 url: `${entity.url.path}`,
-                changefreq: 'monthly',
+                changefreq: 'weekly',
                 priority: 0.8
               })
             }
