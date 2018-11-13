@@ -2,19 +2,23 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import PegiLogo from '../PegiLogo'
-import GameType from '../GameType'
-import TournamentType from '../TournamentType'
-import Platform from '../Platform'
-import Meta from '../Meta'
-import WeezeventPlayerList from '../WeezeventPlayersList'
+import getConfig from 'next/config'
+
+import PegiLogo from 'components/PegiLogo'
+import GameType from 'components/GameType'
+import TournamentType from 'components/TournamentType'
+import Platform from 'components/Platform'
+import Meta from 'components/Meta'
+import WeezeventPlayerList from 'components/WeezeventPlayersList'
+import TicketButton from 'components/TicketButton'
+import ToornamentIframe from 'components/ToornamentIframe'
 
 import './styles.scss'
-import TicketButton from '../TicketButton'
-import ToornamentIframe from '../ToornamentIframe'
+
+const { publicRuntimeConfig } = getConfig()
 
 function TournamentContent ({ data: { loading, error, node } }) {
-  if (error || (node && node.type.id !== 'tournament') || (node && node.edition.nid !== parseInt(process.env.EDITION_ID))) {
+  if (error || (node && node.type.id !== 'tournament') || (node && node.edition.nid !== parseInt(publicRuntimeConfig.EDITION_ID))) {
     return <div className='notification is-danger'>Une erreur est survenue pendant le chargement du tournoi !!!</div>
   }
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Layout from 'components/Layout'
 import NewsContent from 'components/NewsContent'
 
-class NewsPage extends React.Component {
+class NewsSinglePage extends React.Component {
   static getInitialProps ({ query: { nid } }) {
     return { nid: nid }
   }
@@ -22,8 +22,8 @@ class NewsPage extends React.Component {
     )
   }
 }
-NewsPage.propTypes = {
-  nid: PropTypes.string
+NewsSinglePage.propTypes = {
+  nid: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 }
 
-export default NewsPage
+export default NewsSinglePage

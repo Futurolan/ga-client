@@ -6,8 +6,6 @@ import ToornamentResults from 'components/ToornamentResults'
 
 import config from 'config/config'
 
-import '../styles/styles.scss'
-
 class LivePage extends React.Component {
   render () {
     return (

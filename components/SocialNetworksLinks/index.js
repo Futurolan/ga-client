@@ -1,5 +1,7 @@
 import React from 'react'
+
 import config from 'config/config'
+
 import './styles.scss'
 
 class SocialNetworksLinks extends React.Component {

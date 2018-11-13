@@ -1,9 +1,10 @@
 import App, { Container } from 'next/app'
 import React from 'react'
-import withApolloClient from '../lib/with-apollo-client'
 import { ApolloProvider } from 'react-apollo'
 
-import '../styles/styles.scss'
+import withApolloClient from 'lib/with-apollo-client'
+
+import 'styles/styles.scss'
 
 class MyApp extends App {
   render () {

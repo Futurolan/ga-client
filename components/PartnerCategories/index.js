@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PartnerLogo from '../PartnerLogo'
+
+import PartnerLogo from 'components/PartnerLogo'
+
 class PartnerCategories extends React.Component {
   createPartners (categoryId) {
     const buildPartners = []

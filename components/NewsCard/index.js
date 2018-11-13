@@ -8,7 +8,7 @@ import './styles.scss'
 const NewsCard = (props) => (
   <div className='ga-news-card card has-ribbon is-shadowless'>
     <div className='ribbon  is-size-7'><Moment unix format='DD/MM/YYYY'>{props.created}</Moment></div>
-    <Link as={`/news/${props.nid}`} href={`/news-single?nid=${props.nid}`}>
+    <Link as={props.url ? props.url : `/news-single?nid=${props.nid}`} href={{ pathname: '/news-single', query: { nid: props.nid } }}>
       <div>
         <div className='card-image'>
           <figure className='image is-2by1'>
@@ -32,6 +32,7 @@ const NewsCard = (props) => (
 NewsCard.propTypes = {
   nid: PropTypes.number,
   title: PropTypes.string,
+  url: PropTypes.string,
   imgFullhdUrl: PropTypes.string,
   imgWidescreenUrl: PropTypes.string,
   imgDesktopUrl: PropTypes.string,

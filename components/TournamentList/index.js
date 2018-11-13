@@ -2,7 +2,11 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import TournamentCard from '../TournamentCard'
+import getConfig from 'next/config'
+
+import TournamentCard from 'components/TournamentCard'
+
+const { publicRuntimeConfig } = getConfig()
 
 function TournamentList ({
   data: { loading, error, nodeQuery }
@@ -14,11 +18,12 @@ function TournamentList ({
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
     return <div className='ga-tournament-list'>
       <div className='columns is-multiline is-6  is-variable'>
-        {nodeQuery.entities.map((tournament, index) => (
+        {nodeQuery.entities.map((tournament) => (
           <div className='column is-one-third' key={tournament.nid}>
             <TournamentCard
               nid={tournament.nid}
               title={tournament.title}
+              url={tournament.url ? tournament.url.path : null}
               imgMobileUrl={tournament.image ? tournament.image.mobile.url : tournament.game.node.image.mobile.url}
               imgDesktopUrl={tournament.image ? tournament.image.desktop.url : tournament.game.node.image.desktop.url}
               imgWidescreenUrl={tournament.image ? tournament.image.widescreen.url : tournament.game.node.image.widescreen.url}
@@ -41,7 +46,7 @@ export const tournaments = gql`
   filter:{
     conditions:[
       {field:"type",value:["tournament"],operator:EQUAL},
-      {field:"field_tournament_edition",value:["${process.env.EDITION_ID}"]},
+      {field:"field_tournament_edition",value:["${publicRuntimeConfig.EDITION_ID}"]},
       {field:"status",value:["1"]}
     ]},
   sort:[{field:"field_weight",direction:ASC}],
@@ -54,6 +59,9 @@ export const tournaments = gql`
         reservedSlot:fieldTournamentReservedSlot
         size:fieldTournamentSize
         platform:fieldTournamentPlatform
+        url: entityUrl {
+          path
+        }
         image:fieldTournamentImage{
           mobile:derivative(style:CROP_2_1_720X360){
             url

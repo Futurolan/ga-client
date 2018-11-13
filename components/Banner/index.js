@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import config from 'config/config'
 
 import './styles.scss'
+
 const Banner = (props) => (
   <section className='ga-banner has-text-centered'>
     <img src={props.imgUrl} />

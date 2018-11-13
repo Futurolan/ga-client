@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Layout from 'components/Layout'
 import TournamentContent from 'components/TournamentContent'
 
-class TournamentPage extends React.Component {
+class TournoisSinglePage extends React.Component {
   static getInitialProps ({ query: { nid } }) {
     return { nid: nid }
   }
@@ -23,8 +23,8 @@ class TournamentPage extends React.Component {
   }
 }
 
-TournamentPage.propTypes = {
-  nid: PropTypes.string
+TournoisSinglePage.propTypes = {
+  nid: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 }
 
-export default TournamentPage
+export default TournoisSinglePage

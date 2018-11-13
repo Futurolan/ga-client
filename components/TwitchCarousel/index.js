@@ -1,9 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import io from 'socket.io-client'
+import getConfig from 'next/config'
+
+import TwitchPlayer from 'components/TwitchPlayer'
 
 import './styles.scss'
-import TwitchPlayer from '../TwitchPlayer'
+
+const { publicRuntimeConfig } = getConfig()
 
 class TwitchCarousel extends React.Component {
   constructor (props) {
@@ -16,8 +20,8 @@ class TwitchCarousel extends React.Component {
 
   componentDidMount () {
     // connect to WS server and listen event
-    const socket = io(process.env.SOCKET_URL)
-    socket.on(`streamsTwitch${process.env.EDITION_ID}`, (streams) => {
+    const socket = io(publicRuntimeConfig.SOCKET_URL)
+    socket.on(`streamsTwitch${publicRuntimeConfig.EDITION_ID}`, (streams) => {
       let streamsOnline = {}
       for (let streamId in streams) {
         if (streams[streamId].front && streams[streamId].online) { streamsOnline[streamId] = streams[streamId] }
@@ -68,7 +72,7 @@ class TwitchCarousel extends React.Component {
           {this.state.channelList.length >= 2 && <div className='previous' onClick={this.handlePreviousClick}><i className='fas fa-angle-left' /></div>}
         </div>
         <div className='ga-twitch-carousel-button has-text-centered'>
-          <Link href='live'>
+          <Link href={'/live'}>
             <a className='button is-primary is-medium'>
               Voir la page live
             </a>

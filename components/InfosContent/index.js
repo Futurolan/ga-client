@@ -2,7 +2,11 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import Accordion from '../Accordion'
+import getConfig from 'next/config'
+
+import Accordion from 'components/Accordion'
+
+const { publicRuntimeConfig } = getConfig()
 
 function InfosContent ({
   data: { loading, error, nodeQuery }
@@ -44,7 +48,7 @@ export const infos = gql`
   filter:{
     conditions:[
       {field:"type",value:["information"],operator:EQUAL},
-      {field:"field_information_edition",value:["${process.env.EDITION_ID}"]},
+      {field:"field_information_edition",value:["${publicRuntimeConfig.EDITION_ID}"]},
       {field:"status",value:["1"]}
     ]},
   sort:[{field:"created",direction:DESC}],

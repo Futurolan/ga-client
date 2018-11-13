@@ -1,8 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
+import getConfig from 'next/config'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import Link from 'next/link'
 import PropTypes from 'prop-types'
+
+const { publicRuntimeConfig } = getConfig()
 
 function TicketButton ({ data: { loading, error, node } }) {
   if (error) {
@@ -23,7 +26,7 @@ function TicketButton ({ data: { loading, error, node } }) {
 
 export const edition = gql`
 query{
-  node:nodeById(id:"${process.env.EDITION_ID}") {
+  node:nodeById(id:"${publicRuntimeConfig.EDITION_ID}") {
     ... on NodeEdition {
       url:fieldEditionWeezeventUrl
     }

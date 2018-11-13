@@ -2,9 +2,13 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import ToornamentIframe from '../ToornamentIframe'
+import getConfig from 'next/config'
+
+import ToornamentIframe from 'components/ToornamentIframe'
 
 import './styles.scss'
+
+const { publicRuntimeConfig } = getConfig()
 
 function ToornamentResults ({
   data: { loading, error, nodeQuery }
@@ -24,7 +28,7 @@ function ToornamentResults ({
         </div>
         <div className='panel-container has-background-white'>
           <div className='columns is-multiline'>
-            {nodeQuery.entities.map((tournament, index) => (
+            {nodeQuery.entities.map((tournament) => (
               <div className='column is-12' key={tournament.nid}>
                 <ToornamentIframe id={tournament.toornamentId} />
               </div>
@@ -43,7 +47,7 @@ export const tournaments = gql`
   filter:{
     conditions:[
       {field:"type",value:["tournament"],operator:EQUAL},
-      {field:"field_tournament_edition",value:["${process.env.EDITION_ID}"]},
+      {field:"field_tournament_edition",value:["${publicRuntimeConfig.EDITION_ID}"]},
       {field:"field_tournament_toornament_id",operator:IS_NOT_NULL},
       {field:"status",value:["1"]}
     ]},

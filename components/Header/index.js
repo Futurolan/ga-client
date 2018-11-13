@@ -2,14 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-import ActiveLink from '../ActiveLink'
-
-import './styles.scss'
-import TicketMenu from '../TicketMenu'
-import LiveMenu from '../LiveMenu'
+import ActiveLink from 'components/ActiveLink'
+import TicketMenu from 'components/TicketMenu'
+import LiveMenu from 'components/LiveMenu'
+import SocialNetworksLinks from 'components/SocialNetworksLinks'
 
 import config from 'config/config'
-import SocialNetworksLinks from '../SocialNetworksLinks'
+
+import './styles.scss'
 
 class Header extends React.Component {
   constructor (props) {

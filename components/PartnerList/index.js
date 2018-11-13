@@ -2,7 +2,11 @@ import React from 'react'
 import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import PartnerCategories from '../PartnerCategories'
+import getConfig from 'next/config'
+
+import PartnerCategories from 'components/PartnerCategories'
+
+const { publicRuntimeConfig } = getConfig()
 
 function PartnerList ({
 
@@ -26,7 +30,7 @@ export const partners = gql`
   nodeQuery(
   filter:{
     conditions:[
-      {field:"field_partner_edition",value:["${process.env.EDITION_ID}"]},
+      {field:"field_partner_edition",value:["${publicRuntimeConfig.EDITION_ID}"]},
       {field:"type",value:["partner"],operator:EQUAL},
       {field:"status",value:["1"]}
     ]},

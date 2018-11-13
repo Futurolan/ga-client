@@ -2,10 +2,15 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import './styles.scss'
 import Moment from 'react-moment'
-import Meta from '../Meta'
-import SocialNetworkShare from '../SocialNetworkShare'
+import getConfig from 'next/config'
+
+import Meta from 'components/Meta'
+import SocialNetworkShare from 'components/SocialNetworkShare'
+
+import './styles.scss'
+
+const { publicRuntimeConfig } = getConfig()
 
 function NewsContent ({ data: { loading, error, node } }) {
   if (error || (node && node.type.id !== 'news')) {
@@ -14,7 +19,7 @@ function NewsContent ({ data: { loading, error, node } }) {
 
   if (node) {
     // Fix sale tant que j'ai pas compris le soucis de cache ...
-    const processedContent = node.content.processed.replace(new RegExp('src="/sites/default/files/inline-images/', 'g'), `src="${process.env.BACKEND_API_URL}/sites/default/files/inline-images/`)
+    const processedContent = node.content.processed.replace(new RegExp('src="/sites/default/files/inline-images/', 'g'), `src="${publicRuntimeConfig.BACKEND_API_URL}/sites/default/files/inline-images/`)
 
     return <div className='ga-news-content'>
       <Meta title={node.title} image={node.image.fullhd.url} description={node.description} />

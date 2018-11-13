@@ -2,7 +2,11 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
+import getConfig from 'next/config'
+
 import TwitchCarousel from 'components/TwitchCarousel'
+
+const { publicRuntimeConfig } = getConfig()
 
 function TwitchCarouselActivator ({ data: { loading, error, node } }) {
   if (error) {
@@ -17,7 +21,7 @@ function TwitchCarouselActivator ({ data: { loading, error, node } }) {
 
 export const edition = gql`
 query{
-  node:nodeById(id:"${process.env.EDITION_ID}") {
+  node:nodeById(id:"${publicRuntimeConfig.EDITION_ID}") {
     ... on NodeEdition {
       livemode:fieldEditionLiveModeActive
     }

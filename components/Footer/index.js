@@ -1,10 +1,11 @@
 import React from 'react'
 
-import ActiveLink from '../ActiveLink'
+import ActiveLink from 'components/ActiveLink'
+import SocialNetworksLinks from 'components/SocialNetworksLinks'
+
+import config from 'config/config'
 
 import './styles.scss'
-import config from 'config/config'
-import SocialNetworksLinks from '../SocialNetworksLinks'
 
 class Footer extends React.Component {
   render () {

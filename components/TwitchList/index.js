@@ -1,6 +1,10 @@
 import React from 'react'
 import io from 'socket.io-client'
+import getConfig from 'next/config'
+
 import './styles.scss'
+
+const { publicRuntimeConfig } = getConfig()
 
 class TwitchList extends React.Component {
   constructor (props) {
@@ -10,8 +14,8 @@ class TwitchList extends React.Component {
 
   componentDidMount () {
     // connect to WS server and listen event
-    const socket = io(process.env.SOCKET_URL)
-    socket.on(`streamsTwitch${process.env.EDITION_ID}`, (streams) => {
+    const socket = io(publicRuntimeConfig.SOCKET_URL)
+    socket.on(`streamsTwitch${publicRuntimeConfig.EDITION_ID}`, (streams) => {
       this.setState({ streams: streams })
     })
     this.setState({ socket })

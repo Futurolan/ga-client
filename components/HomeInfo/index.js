@@ -2,7 +2,11 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
+import getConfig from 'next/config'
+
 import './styles.scss'
+
+const { publicRuntimeConfig } = getConfig()
 
 function HomeInfo ({
   data: { loading, error, nodeQuery }
@@ -50,7 +54,7 @@ export const infos = gql`
   filter:{
     conditions:[
       {field:"type",value:["home_info"],operator:EQUAL},
-      {field:"field_home_info_edition",value:["${process.env.EDITION_ID}"]},
+      {field:"field_home_info_edition",value:["${publicRuntimeConfig.EDITION_ID}"]},
       {field:"status",value:["1"]}
     ]},
   sort:[{field:"created",direction:DESC}],

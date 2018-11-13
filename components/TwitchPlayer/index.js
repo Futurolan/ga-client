@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import './styles.scss'
 
 class TwitchPlayer extends React.Component {
@@ -11,7 +12,7 @@ class TwitchPlayer extends React.Component {
   componentDidMount () {
     if (this.props.active) { this.setState({ animationEnded: true }) }
   }
-  componentDidUpdate (prevProps, prevState) {
+  componentDidUpdate (prevProps) {
     if (!prevProps.active) {
       if (prevProps.active !== this.props.active) {
         setTimeout(() => {

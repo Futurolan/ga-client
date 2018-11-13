@@ -2,10 +2,15 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
-import WeezeventIframe from '../WeezeventIframe'
+import getConfig from 'next/config'
+
+import WeezeventIframe from 'components/WeezeventIframe'
+
 import config from 'config/config'
 
 import './styles.scss'
+
+const { publicRuntimeConfig } = getConfig()
 
 function TicketContent ({ data: { loading, error, node } }) {
   if (error) {
@@ -44,7 +49,7 @@ function TicketContent ({ data: { loading, error, node } }) {
 
 export const edition = gql`
 query{
-  node:nodeById(id:"${process.env.EDITION_ID}") {
+  node:nodeById(id:"${publicRuntimeConfig.EDITION_ID}") {
     ... on NodeEdition {
       url:fieldEditionWeezeventUrl
       weezeventId:fieldEditionWeezeventEventId
