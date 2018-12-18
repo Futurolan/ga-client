@@ -1,7 +1,9 @@
-const withSass = require('@zeit/next-sass')
 const webpack = require('webpack')
+const withPlugins = require('next-compose-plugins')
+const sass = require('@zeit/next-sass')
+const optimizedImages = require('next-optimized-images')
 
-module.exports = withSass({
+const nextConfig = {
 
   publicRuntimeConfig: {
     EDITION_ID: process.env.EDITION_ID,
@@ -10,7 +12,6 @@ module.exports = withSass({
     SOCKET_URL: process.env.SOCKET_URL,
     BASE_URL: process.env.BASE_URL
   },
-
   webpack: (config, { dev }) => {
     // Add polyfill for IE 10 & 11
     const originalEntry = config.entry
@@ -38,4 +39,17 @@ module.exports = withSass({
 
     return config
   }
-})
+}
+
+module.exports = withPlugins([
+  [sass],
+  [optimizedImages, {
+    handleImages: ['png', 'jpg'],
+    mozjpeg: {
+      quality: 80
+    },
+    optipng: {
+      optimizationLevel: 3
+    }
+  }]
+], nextConfig)

@@ -7,13 +7,14 @@ const PartnerLogo = (props) => (
   <div className='partner-logo box'>
     <a href={props.url} target='_blank'>
       <figure>
-        <img src={props.imageUrl} />
+        <img src={props.imageUrl} alt={`Logo du partenaire ${props.title}`} />
       </figure>
     </a>
   </div>
 )
 
 PartnerLogo.propTypes = {
+  title: PropTypes.string,
   imageUrl: PropTypes.string,
   url: PropTypes.string
 }

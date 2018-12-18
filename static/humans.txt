@@ -1,6 +1,0 @@
-/* TEAM Futurolan */
-Creator : Baptiste
-Contact: baptiste@bmagic.fr
-Discord: Bmagic#6057
-Github: bmagic
-From: Rennes, France

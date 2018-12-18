@@ -40,7 +40,7 @@ class TwitchList extends React.Component {
                   return <div className='thumbnail column is-4-tablet is-4-desktop is-3-widescreen ' key={i}>
                     <a title={this.state.streams[key].title} href={`https://www.twitch.tv/${key}`} target='_blank'>
                       <div className='image'>
-                        <img src={`https://static-cdn.jtvnw.net/previews-ttv/live_user_${key}-640x360.jpg?cache=${new Date().getMinutes()}`} />
+                        <img alt={`Vignette d'aperçu du live twich de ${this.state.streams[key].display_name}`} src={`https://static-cdn.jtvnw.net/previews-ttv/live_user_${key}-640x360.jpg?cache=${new Date().getMinutes()}`} />
                         <div className='is-online' />
                         <div className='name has-text-white has-background-dark'> {this.state.streams[key].display_name}&nbsp;|&nbsp;
                           <i className='fas fa-user' />&nbsp;{this.state.streams[key].viewer_count}</div>
@@ -57,7 +57,7 @@ class TwitchList extends React.Component {
                   return <div className='thumbnail column is-4-tablet is-4-desktop is-3-widescreen ' key={i}>
                     <a href={`https://www.twitch.tv/${key}`} target='_blank'>
                       <div className='image'>
-                        <img src={this.state.streams[key].offline_image_url} />
+                        <img alt={`Image offline du twitch de ${this.state.streams[key].display_name}`} src={this.state.streams[key].offline_image_url} />
                         <div className='is-offline' />
                         <div className='name has-text-white has-background-dark'> {this.state.streams[key].display_name}</div>
                       </div>

@@ -13,10 +13,10 @@ const NewsCard = (props) => (
         <div className='card-image'>
           <figure className='image is-2by1'>
             <img
+              alt={`Image d'illustration de la news ${props.title}`}
               src={props.imgMobileUrl}
               srcSet={`${props.imgDesktopUrl} 288w, ${props.imgWidescreenUrl} 352w, ${props.imgFullhdUrl} 416w, ${props.imgMobileUrl} 720w`}
-              sizes='(min-width: 1408px) 416px,(min-width: 1216px) 352px, (min-width: 769px) 288px,  100vw'
-              alt={props.placeHolder} />
+              sizes='(min-width: 1408px) 416px,(min-width: 1216px) 352px, (min-width: 769px) 288px,  100vw' />
           </figure>
         </div>
         <div className='card-content '>
@@ -37,8 +37,7 @@ NewsCard.propTypes = {
   imgWidescreenUrl: PropTypes.string,
   imgDesktopUrl: PropTypes.string,
   imgMobileUrl: PropTypes.string,
-  created: PropTypes.number,
-  placeHolder: PropTypes.string
+  created: PropTypes.number
 }
 
 export default NewsCard

@@ -38,6 +38,7 @@ export const partners = gql`
   ) {
     entities{
       ... on NodePartner{
+        title
         nid
         image:fieldPartnerImage{
           derivative(style:PARTNER_150X150){

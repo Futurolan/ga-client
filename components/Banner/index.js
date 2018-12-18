@@ -7,7 +7,7 @@ import './styles.scss'
 
 const Banner = (props) => (
   <section className='ga-banner has-text-centered'>
-    <img src={props.imgUrl} />
+    <img alt={`Image de présentation de ${config.title}`} src={props.imgUrl} />
     <h1>{config.title}</h1>
   </section>
 )

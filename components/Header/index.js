@@ -30,7 +30,7 @@ class Header extends React.Component {
           <div className='navbar-brand'>
             <Link href='/'>
               <a>
-                <img src={config.logo} />
+                <img alt={`Logo de l'évènement ${config.title}`} src={config.logo} />
               </a>
             </Link>
             <button className='button navbar-burger is-dark' onClick={this.toggleMenu}>
@@ -57,7 +57,7 @@ class Header extends React.Component {
             </div>}
             <div className='navbar-end'>
               {config.mainPartner && <a href={config.mainPartner.url} target='_blank'>
-                <img src={config.mainPartner.logo} />
+                <img alt={'Logo du partenaire principal de l\'évènement'} src={config.mainPartner.logo} />
               </a>}
               {config.mainPartner === undefined && config.social && <div className='navbar-item'>
                 <SocialNetworksLinks />

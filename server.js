@@ -70,11 +70,8 @@ app.prepare()
     const server = express()
 
     server.get('/robots.txt', (req, res) => {
-      return res.sendFile(path.join(__dirname, './static', 'robots.txt'))
-    })
-
-    server.get('/humans.txt', (req, res) => {
-      return res.sendFile(path.join(__dirname, './static', 'humans.txt'))
+      res.type('text/plain')
+      res.send(`User-agent: *\nDisallow:\nSitemap: ${process.env.BASE_URL}/sitemap.xml`)
     })
 
     server.get('/sitemap.xml', function (req, res) {

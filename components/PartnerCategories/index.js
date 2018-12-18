@@ -11,7 +11,7 @@ class PartnerCategories extends React.Component {
       const partner = this.props.partners[index]
       if (partner.category.entity.nid === categoryId) {
         buildPartners.push(<div key={partner.nid} className='column is-2-desktop is-4-tablet'><PartnerLogo
-          imageUrl={partner.image.derivative.url} url={partner.url} /></div>)
+          title={partner.title} imageUrl={partner.image.derivative.url} url={partner.url} /></div>)
       }
     }
     return buildPartners
