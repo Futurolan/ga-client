@@ -22,7 +22,7 @@ class Accordion extends React.Component {
     return (
       <div className='ga-accordion panel'>
         <div className='panel-heading has-background-primary' onClick={this.toggleMenu}>
-          <div className='level'>
+          <div className='level is-mobile'>
             <div className='level-left'>
               <div className='level-item'>
                 <h2 className='title is-size-5 has-text-white'><i className={`fas ${icon}`} />&nbsp;&nbsp;{title}</h2>
