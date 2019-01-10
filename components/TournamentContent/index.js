@@ -17,12 +17,15 @@ import './styles.scss'
 
 const { publicRuntimeConfig } = getConfig()
 
-function TournamentContent ({ data: { loading, error, node } }) {
+function TournamentContent ({ changeBg, data: { loading, error, node } }) {
   if (error || (node && node.type.id !== 'tournament') || (node && node.edition.nid !== parseInt(publicRuntimeConfig.EDITION_ID))) {
     return <div className='notification is-danger'>Une erreur est survenue pendant le chargement du tournoi !!!</div>
   }
 
   if (node) {
+    if (node.bgSponsor) {
+      changeBg(node.bgSponsor.url)
+    }
     return <div className='ga-tournament-content'>
       <Meta title={node.title} image={node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} description={`Toutes les informations relatives au tournoi ${node.title}`} />
 
@@ -44,7 +47,7 @@ function TournamentContent ({ data: { loading, error, node } }) {
 
       <div className='columns'>
         <div className='column is-8'>
-          <div className='content' >
+          <div className='box content' >
             <div dangerouslySetInnerHTML={{ __html: node.description.value }} />
           </div>
 
@@ -184,6 +187,9 @@ export const tournament = gql`
         reservedSlot:fieldTournamentReservedSlot
         size:fieldTournamentSize
         toornamentId:fieldTournamentToornamentId
+        bgSponsor: fieldTournamentBgSponsor{
+          url
+        }
       }
     }
   }
@@ -191,7 +197,8 @@ export const tournament = gql`
 `
 
 TournamentContent.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  changeBg: PropTypes.func
 }
 
 export default graphql(tournament, {

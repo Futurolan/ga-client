@@ -1,6 +1,9 @@
 @import '../../node_modules/bulma/sass/utilities/_all';
 
 .ga-tournament-content{
+  .box.content{
+    border-radius: 4px;
+  }
 
   .ga-tournament-content-image {
     position:relative;
