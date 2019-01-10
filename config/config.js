@@ -2,7 +2,7 @@ let config = {
   title: 'Gamers Assembly : Halloween Edition 2018',
   logo: `/static/img/logo-orange-100x100.png`,
   description: 'L\'édition 2018 de la Gamers Assembly Halloween Edition aura lieu du 10 au 11 novembre à la salle de spectacle de la Hune - Saint-Benoît (86)',
-  metaImagePath: `${process.env.BASE_URL}/static/img/logo-orange-200x200.png`,
+  metaImagePath: `/static/img/logo-orange-200x200.png`,
   gaTrackingId: 'UA-128777022-2',
   mainPartner: {
     logo: '/static/img/logo_st_benoit.jpg',
